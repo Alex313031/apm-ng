@@ -119,12 +119,12 @@ printVersions = (args, callback) ->
           gitVersion ?= ''
           atomVersion ?= ''
           versions =  """
-            #{'apm'.red}  #{apmVersion.red}
-            #{'npm'.green}  #{npmVersion.green}
-            #{'node'.blue} #{nodeVersion.blue} #{process.arch.blue}
-            #{'atom-ng'.cyan} #{atomVersion.cyan}
-            #{'python'.yellow} #{pythonVersion.yellow}
-            #{'git'.magenta} #{gitVersion.magenta}
+            #{' > apm'.red}  #{apmVersion.red}
+            #{' > npm'.green}  #{npmVersion.green}
+            #{' > node'.blue} #{nodeVersion.blue} #{process.arch.blue}
+            #{' > atom-ng'.cyan} #{atomVersion.cyan}
+            #{' > python'.yellow} #{pythonVersion.yellow}
+            #{' > git'.magenta} #{gitVersion.magenta}
           """
 
           if config.isWin32()
