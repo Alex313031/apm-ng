@@ -122,7 +122,7 @@ printVersions = (args, callback) ->
             #{'apm'.red}  #{apmVersion.red}
             #{'npm'.green}  #{npmVersion.green}
             #{'node'.blue} #{nodeVersion.blue} #{process.arch.blue}
-            #{'atom'.cyan} #{atomVersion.cyan}
+            #{'atom-ng'.cyan} #{atomVersion.cyan}
             #{'python'.yellow} #{pythonVersion.yellow}
             #{'git'.magenta} #{gitVersion.magenta}
           """
