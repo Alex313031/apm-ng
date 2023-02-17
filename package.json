@@ -1,14 +1,14 @@
 {
   "name": "atom-package-manager",
-  "description": "Atom package manager",
-  "version": "2.6.5",
+  "description": "Atom-ng package manager",
+  "version": "2.6.6",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atom/apm.git"
+    "url": "https://github.com/Alex313031/apm-ng.git"
   },
   "bugs": {
-    "url": "https://github.com/atom/apm/issues"
+    "url": "https://github.com/Alex313031/apm-ng/issues"
   },
   "main": "./lib/apm.js",
   "bin": {
@@ -52,7 +52,7 @@
     "underscore-plus": "1.x",
     "wordwrap": "1.0.0",
     "wrench": "~1.5.1",
-    "yargs": "^3.32.0"
+    "yargs": "^5.0.0"
   },
   "devDependencies": {
     "coffee-script": "^1.12.7",
