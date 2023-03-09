@@ -59,6 +59,8 @@
     "coffeelint": "<2.0",
     "express": "^4.17.1",
     "jasmine-focused": ">=1.0.7 <2.0",
+    "node": "14.21.3",
+    "npm": "6.14.18",
     "node-gyp": "6.1.0",
     "shx": "^0.3.3"
   }
