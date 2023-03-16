@@ -50,7 +50,7 @@
     "semver": "^7.3.8",
     "tar": "^6.0.5",
     "temp": "^0.9.4",
-    "underscore-plus": "1.7.0",
+    "underscore-plus": "1.x",
     "wordwrap": "1.0.0",
     "wrench": "^1.5.9",
     "yargs": "6.6.0"
