@@ -1,6 +1,7 @@
 {
   "name": "atom-package-manager",
   "description": "Atom-ng package manager",
+  "author": "Alex313031 <https://github.com/Alex313031>",
   "version": "2.6.8",
   "license": "MIT",
   "repository": {
