@@ -44,7 +44,7 @@ module.exports =
 
     switch process.platform
       when 'darwin'
-        child_process.exec 'mdfind "kMDItemCFBundleIdentifier == \'com.github.atom\'"', (error, stdout='', stderr) ->
+        child_process.exec 'mdfind "kMDItemCFBundleIdentifier == \'com.alex313031.atom\'"', (error, stdout='', stderr) ->
           [appLocation] = stdout.split('\n') unless error
           appLocation = '/Applications/Atom.app' unless appLocation
           asarPath = "#{appLocation}/Contents/Resources/app.asar"
