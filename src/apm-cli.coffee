@@ -178,7 +178,7 @@ getPython3Version = (callback) ->
     globalconfig: config.getGlobalConfigPath()
   npm.load npmOptions, ->
     python3 = npm.config.get('python') ? process.env.PYTHON
-    if config.isWin32() and not python
+    if config.isWin32() and not python3
       rootDir = process.env.SystemDrive ? 'C:\\'
       rootDir += '\\' unless rootDir[rootDir.length - 1] is '\\'
       pythonExe = path.resolve(rootDir, 'Python39', 'python.exe')
