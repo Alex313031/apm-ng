@@ -2,7 +2,7 @@
 setlocal EnableDelayedExpansion
 setlocal EnableExtensions
 
-echo ^>^> Downloading bundled Node
+echo ^>^> Downloading bundled Node (v14.21.3)
 node .\script\download-node.js
 
 echo.

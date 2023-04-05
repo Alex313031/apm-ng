@@ -98,7 +98,7 @@ const downloadNode = function(version, done) {
 const versionToInstall = fs.readFileSync(path.resolve(__dirname, '..', 'BUNDLED_NODE_VERSION'), 'utf8').trim()
 downloadNode(versionToInstall, function(error) {
   if (error != null) {
-    console.error('Failed to download node', error);
+    console.error('Failed to download node!', error);
     return process.exit(1);
   } else {
     return process.exit(0);
