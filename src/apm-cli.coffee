@@ -133,7 +133,7 @@ printVersions = (args, callback) ->
 
           if config.isWin32()
             visualStudioVersion = config.getInstalledVisualStudioFlag() ? ''
-            versions += "\n#{'visual studio'.cyan} #{visualStudioVersion.cyan}"
+            versions += "\n#{' > visual studio'.cyan} #{visualStudioVersion.cyan}"
 
           console.log versions
         callback()
