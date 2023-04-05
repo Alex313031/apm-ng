@@ -109,13 +109,16 @@ printVersions = (args, callback) ->
             node: nodeVersion
             atom: atomVersion
             python: pythonVersion
+            python3: python3Version
             git: gitVersion
             nodeArch: process.arch
           if config.isWin32()
             versions.visualStudio = config.getInstalledVisualStudioFlag()
           console.log JSON.stringify(versions)
         else
+        getPython3Version (python3Version) ->
           pythonVersion ?= ''
+          python3Version ?= ''
           gitVersion ?= ''
           atomVersion ?= ''
           versions =  """
@@ -124,6 +127,7 @@ printVersions = (args, callback) ->
             #{' > node'.blue} #{nodeVersion.blue} #{process.arch.blue}
             #{' > atom-ng'.cyan} #{atomVersion.cyan}
             #{' > python'.yellow} #{pythonVersion.yellow}
+            #{' > python3'.yellow} #{python3Version.yellow}
             #{' > git'.magenta} #{gitVersion.magenta}
           """
 
@@ -155,9 +159,34 @@ getPythonVersion = (callback) ->
       pythonExe = path.resolve(rootDir, 'Python27', 'python.exe')
       python = pythonExe if fs.isFileSync(pythonExe)
 
-    python ?= 'python'
+    python ?= 'python2.7'
 
     spawned = spawn(python, ['--version'])
+    outputChunks = []
+    spawned.stderr.on 'data', (chunk) -> outputChunks.push(chunk)
+    spawned.stdout.on 'data', (chunk) -> outputChunks.push(chunk)
+    spawned.on 'error', ->
+    spawned.on 'close', (code) ->
+      if code is 0
+        [name, version] = Buffer.concat(outputChunks).toString().split(' ')
+        version = version?.trim()
+      callback(version)
+
+getPython3Version = (callback) ->
+  npmOptions =
+    userconfig: config.getUserConfigPath()
+    globalconfig: config.getGlobalConfigPath()
+  npm.load npmOptions, ->
+    python3 = npm.config.get('python') ? process.env.PYTHON
+    if config.isWin32() and not python
+      rootDir = process.env.SystemDrive ? 'C:\\'
+      rootDir += '\\' unless rootDir[rootDir.length - 1] is '\\'
+      pythonExe = path.resolve(rootDir, 'Python39', 'python.exe')
+      python3 = pythonExe if fs.isFileSync(pythonExe)
+
+    python3 ?= 'python3'
+
+    spawned = spawn(python3, ['--version'])
     outputChunks = []
     spawned.stderr.on 'data', (chunk) -> outputChunks.push(chunk)
     spawned.stdout.on 'data', (chunk) -> outputChunks.push(chunk)
