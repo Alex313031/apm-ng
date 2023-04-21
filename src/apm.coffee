@@ -5,6 +5,8 @@ npm = require 'npm'
 semver = require 'semver'
 asarPath = null
 
+process.env.NODE_SKIP_PLATFORM_CHECK = '1';
+
 module.exports =
   getHomeDirectory: ->
     if process.platform is 'win32' then process.env.USERPROFILE else process.env.HOME
