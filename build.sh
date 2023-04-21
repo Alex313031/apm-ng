@@ -24,6 +24,7 @@ displayHelp () {
 	printf "${bold}${GRE}Script to build apm-ng on Linux.${c0}\n" &&
 	printf "${bold}${YEL}Use the --deps flag to install build dependencies.${c0}\n" &&
 	printf "${bold}${YEL}Use the --bootstrap flag to install npm packages.${c0}\n" &&
+	printf "${bold}${YEL}Use the --clean flag to clean node_modules and build artifacts.${c0}\n" &&
 	printf "${bold}${YEL}Use the --build flag to build Atom-ng.${c0}\n" &&
 	printf "${bold}${YEL}Use the --help flag to show this help.${c0}\n" &&
 	printf "\n"
