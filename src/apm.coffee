@@ -5,7 +5,7 @@ npm = require 'npm'
 semver = require 'semver'
 asarPath = null
 
-process.env.NODE_SKIP_PLATFORM_CHECK = '1';
+process.env.NODE_SKIP_PLATFORM_CHECK = '1'
 
 module.exports =
   getHomeDirectory: ->

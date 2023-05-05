@@ -14,7 +14,7 @@ config = require './apm'
 fs = require './fs'
 git = require './git'
 
-process.env.NODE_SKIP_PLATFORM_CHECK = '1';
+process.env.NODE_SKIP_PLATFORM_CHECK = '1'
 
 setupTempDirectory = ->
   temp = require 'temp'
