@@ -5,6 +5,9 @@ set -e
 initialCwd=`pwd -P`
 scriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Workaround for older OSes
+export NODE_SKIP_PLATFORM_CHECK=1
+
 apmPath=$0
 builtin cd "`dirname "$apmPath"`"
 binDir=`basename "$apmPath"`

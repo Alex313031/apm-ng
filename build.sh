@@ -35,7 +35,7 @@ esac
 
 # Install prerequisites
 installDeps () {
-	sudo apt-get install build-essential git libsecret-1-dev fakeroot rpm libx11-dev libxkbfile-dev nodejs npm node-gyp node-istanbul python2.7-dev
+	sudo apt-get install build-essential fakeroot git libsecret-1-dev libx11-dev libxkbfile-dev python2.7 python2.7-dev rpm
 }
 case $1 in
 	--deps) installDeps; exit 0;;
@@ -98,6 +98,7 @@ printf "\n" &&
 printf "${bold}${GRE} Building apm-ng for Linux...${c0}\n" &&
 printf "\n" &&
 
+npm install &&
 npm run build
 }
 case $1 in
@@ -111,6 +112,4 @@ printf "${bold}${YEL}Use the --bootstrap flag to install npm packages.${c0}\n" &
 printf "${bold}${YEL}Use the --build flag to build Atom-ng.${c0}\n" &&
 printf "${bold}${YEL}Use the --help flag to show this help.${c0}\n" &&
 printf "\n" &&
-
-tput sgr0 &&
-exit 0
+tput sgr0

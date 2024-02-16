@@ -2,7 +2,7 @@
   "name": "atom-package-manager",
   "description": "Atom-ng package manager",
   "author": "Alex313031 <https://github.com/Alex313031>",
-  "version": "2.6.9",
+  "version": "2.6.10",
   "license": "MIT",
   "repository": {
     "type": "git",

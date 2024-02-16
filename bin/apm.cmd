@@ -15,6 +15,9 @@ if not defined apm_git_path (
 :: Force npm to use its builtin node-gyp
 set npm_config_node_gyp=
 
+:: Workaround for older OSes
+set NODE_SKIP_PLATFORM_CHECK=1
+
 if exist "%~dp0\node.exe" (
   "%~dp0\node.exe" "%~dp0/../lib/cli.js" %*
 ) else (
